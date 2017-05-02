@@ -1,0 +1,25 @@
+﻿<div class="page-header text-center" ng-show="loading == false">
+    <h1 class="title">{{sourceName}}</h1>
+    <h3 class="subtitle"><a href='{{sourceURL}}'>More about {{sourceName}} here</a></h3>
+</div>
+
+<div class="spinner" ng-show="loading">
+    <img class="spinner" src="img/loading.gif"/>
+    <div style="margin-top: -40px;">Loading...</div>
+</div>
+
+<div id="article-container" ng-show="loading == false">
+    <p>Here lies a list of {{sourceType}} articles.</p>
+    <br />
+    <table class="table">
+        <tr class="articles" ng-repeat="a in articles">
+            <td class="article-title">
+                <a class="article" href={{a.url}} target="_blank" rel="noopener noreferrer">{{a.title}} ({{a.cleanUrl}})</a>
+            </td>
+
+            <td class="article-comments">
+                <a class="comments" href={{a.comments_link}} target="_blank">Comments</a>
+            </td>
+        </tr>
+    </table>
+</div>
